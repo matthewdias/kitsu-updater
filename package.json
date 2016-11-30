@@ -1,0 +1,22 @@
+{
+  "name": "kitsu-updater",
+  "description": "Automatically update your Kitsu.io library from streaming sites",
+  "version": "0.1.0",
+  "scripts": {
+    "clean": "rm -rf build dist",
+    "clean:chrome": "rm -rf build/chrome dist/chrome",
+    "build": "npm run clean; npm run build:chrome",
+    "build:chrome": "npm run clean:chrome; webpack --progress --config webpack/chrome.js",
+    "dist": "npm run dist:chrome",
+    "dist:chrome": "npm run build:chrome; mkdir dist/chrome; zip -r dist/chrome/chrome.zip build/chrome/*"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "client-oauth2": "3.2.0",
+    "copy-webpack-plugin": "4.0.1",
+    "devour-client": "1.4.0",
+    "media-strategies": "0.1.35",
+    "webpack": "1.13.3"
+  }
+}

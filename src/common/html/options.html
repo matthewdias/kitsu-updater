@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Options</title>
+    <link rel="stylesheet" href="../css/options.css">
+  </head>
+
+  <body>
+    <div id="login">
+      Login to Kitsu
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+      </div>
+      <div>
+        <button id="submit">Login</button>
+      </div>
+    </div>
+
+    <div id="user" style="display:none;">
+      <div>
+        <img id="avatar" height="100" src="" />
+      </div>
+      <div id="name"></div>
+      <div>
+        <button id="logout">Logout</button>
+      </div>
+    </div>
+
+    <div id="sites"></div>
+    <button id="save">Save</button>
+
+    <script src="../js/options.js"></script>
+  </body>
+</html>

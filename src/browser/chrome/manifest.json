@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "name": "Kitsu Updater",
+  "description": "Automatically update your Kitsu.io library from streaming sites",
+  "version": "0.1.0",
+  "permissions": [
+    "background",
+    "notifications",
+    "tabs",
+    "http://animehaven.to/*",
+    "https://twist.moe/*",
+    "http://www.crunchyroll.com/*",
+    "http://www.daisuki.net/*",
+    "http://www.funimation.com/*",
+    "http://www.hulu.com/*",
+    "http://kissanime.to/*",
+    "http://www.masterani.me/*",
+    "http://moetube.net/*",
+    "https://www.netflix.com/*",
+    "http://www.viz.com/*"
+  ],
+  "background": { "scripts": [ "js/background.js" ] },
+  "options_page": "html/options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://animehaven.to/*",
+        "https://twist.moe/*",
+        "http://www.crunchyroll.com/*",
+        "http://www.daisuki.net/*",
+        "http://www.funimation.com/*",
+        "http://www.hulu.com/*",
+        "http://kissanime.to/*",
+        "http://www.masterani.me/*",
+        "http://moetube.net/*",
+        "https://www.netflix.com/*",
+        "http://www.viz.com/*"
+      ],
+      "js": [ "js/content.js" ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "img/icon16.png",
+      "32": "img/icon32.png"
+    },
+    "default_title": "Kitsu Updater",
+    "default_popup": "html/options.html"
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit</title>
+    <link rel="stylesheet" href="../css/edit.css">
+  </head>
+
+  <body>
+    <a id="anime-link" target="_blank">
+      <div>
+        <img id="poster" height="400" src="" />
+      </div>
+      Discuss
+    </a>
+    <div>
+      Anime:
+      <select id="anime-select"></select>
+      <button id="anime-save">Save</button>
+    </div>
+    <div>
+      <label><input id="ignore" type="checkbox">Ignore shows with this title</label>
+    </div>
+    <a id="episode-link" target="_blank">
+      <div>
+        <img id="thumbnail" height="200" src="" />
+      </div>
+    </a>
+    <div>
+      Episode:
+      <select id="episode-select"></select>
+      <button id="episode-save">Save</button>
+    </div>
+    <div>
+      <select id="status">
+        <option value="untracked">Not in Library</option>
+        <option value="current">Currently Watching</option>
+        <option value="planned">Plan to Watch</option>
+        <option value="completed">Completed</option>
+        <option value="on_hold">On Hold</option>
+        <option value="dropped">Dropped</option>
+      </select>
+    </div>
+    <div>
+      <label><input id="reconsuming" type="checkbox">Rewatching</label>
+    </div>
+    <div>
+      Rewatches: <input id="reconsumes" type="text" />
+    </div>
+    <div>
+      <select id="rating">
+        <option value="unrated">No Rating</option>
+        <option value="0.5">0.5</option>
+        <option value="1.0">1.0</option>
+        <option value="1.5">1.5</option>
+        <option value="2.0">2.0</option>
+        <option value="2.5">2.5</option>
+        <option value="3.0">3.0</option>
+        <option value="3.5">3.5</option>
+        <option value="4.0">4.0</option>
+        <option value="4.5">4.5</option>
+        <option value="5.0">5.0</option>
+      </select>
+    </div>
+    <div>
+      Progress: <input id="progress" type="text" /><span id="progress-count"></span>
+    </div>
+    <div>
+      <button id="save">Save</button>
+    </div>
+    <script src="../js/edit.js"></script>
+  </body>
+</html>
