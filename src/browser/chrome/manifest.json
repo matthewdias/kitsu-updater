@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "permissions": [
     "background",
+    "contextMenus",
     "notifications",
     "tabs",
     "http://animehaven.to/*",

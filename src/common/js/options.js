@@ -10,6 +10,9 @@ const name = document.getElementById('name')
 const logoutButton = document.getElementById('logout')
 const sitesDiv = document.getElementById('sites')
 const save = document.getElementById('save')
+const ignoredTitle = document.getElementById('ignored-title')
+const ignored = document.getElementById('ignored')
+const ignoreSave = document.getElementById('ignore-save')
 
 const sites = [
   'Anime Haven',
@@ -60,6 +63,28 @@ const loadSites = () => {
   })
 }
 
+const loadIgnored = () => {
+  let titles = localStorage.getItem('ignored')
+  if (!titles || titles == 'undefined') {
+    ignoredTitle.style = 'display:none;'
+    ignoreSave.style = 'display:none;'
+  }
+  else {
+    let boxes = titles.split(',')
+    boxes.filter((title, index) => {
+      return index < boxes.length - 1
+    }).map((title, index) => {
+      ignored.innerHTML +=
+        `<div>
+          <label>
+            <input type="checkbox" id="${index}" checked />
+            ${title}
+          </label>
+        </div>`
+    })
+  }
+}
+
 passField.addEventListener('keyup', (event) => {
     event.preventDefault();
     if (event.keyCode == 13)
@@ -82,6 +107,19 @@ save.onclick = (event) => {
   })
 }
 
+ignoreSave.onclick = (event) => {
+  let titles = localStorage.getItem('ignored')
+  let boxes = titles.split(',')
+  boxes.filter((title, index) => {
+    return index < boxes.length - 1
+  }).map((title, index) => {
+    let t = document.getElementById(index)
+    if (!t.checked)
+      localStorage.setItem('ignored', titles.replace(title + ','), '')
+  })
+  location.reload()
+}
+
 let oldVersion = localStorage.getItem('version')
 let newVersion = getVersion()
 if (oldVersion != newVersion) {
@@ -92,3 +130,4 @@ if (oldVersion != newVersion) {
 
 loadUser()
 loadSites()
+loadIgnored()

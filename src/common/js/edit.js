@@ -30,7 +30,8 @@ sendMessage({ action: 'anime', id: animeId }, (anime) => {
   animeLink.href = `http://staging.kitsu.io/anime/${anime.slug}`
   poster.src = anime.posterImage.original
   animeSave.disabled = true
-  ignore.checked = localStorage.getItem(title)
+  let ignored = localStorage.getItem('ignored')
+  ignore.checked = ignored && ignored.includes(title)
   episodeLink.href = `http://staging.kitsu.io/anime/${anime.slug}`
   episodeSave.disabled = true
   reconsuming.disabled = true
@@ -92,7 +93,15 @@ sendMessage({ action: 'anime', id: animeId }, (anime) => {
   }
 
   ignore.onchange = (event) => {
-    localStorage.setItem(title, ignore.checked)
+    let ignored = localStorage.getItem('ignored')
+    if (!ignored || ignored == 'undefined')
+      ignored = ''
+    if (ignore.checked) {
+      localStorage.setItem('ignored', ignored + title + ',')
+    }
+    else {
+      localStorage.setItem('ignored', ignored.replace(title + ','), '')
+    }
   }
 
   episodeSelect.onchange = (event) => {

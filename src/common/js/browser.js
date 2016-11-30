@@ -44,14 +44,23 @@ const inject = (tabId, file) => {
 }
 
 const openTab = (page) => {
-  if (chrome)
-    chrome.tabs.create({ url: chrome.extension.getURL(page) })
+  if (chrome) {
+    let url = ''
+    if (page.includes('http'))
+      url = page
+    else url = chrome.extension.getURL(page)
+    chrome.tabs.create({ url })
+  }
 }
 
 const openPopup = (page) => {
   if (chrome) {
+    let url = ''
+    if (page.includes('http'))
+      url = page
+    else url = chrome.extension.getURL(page)
     chrome.windows.create({
-      url: chrome.extension.getURL(page),
+      url,
       type: 'popup',
       width: 500,
       height: 500
@@ -61,7 +70,11 @@ const openPopup = (page) => {
 
 const navigateTo = (location) => {
   if (chrome) {
-    window.location.replace(chrome.extension.getURL(location))
+    let url = ''
+    if (location.includes('http'))
+      url = location
+    else url = chrome.extension.getURL(location)
+    window.location.replace(url)
   }
 }
 
@@ -82,4 +95,10 @@ const setPopup = (options) => {
   }
 }
 
-module.exports = { getVersion, sendMessage, sendMessageToContent, onMessage, onRemoved, onUpdated, inject, openTab, openPopup, navigateTo, getViews, setPopup }
+const contextMenu = (options) => {
+  if (chrome) {
+    chrome.contextMenus.create(options)
+  }
+}
+
+module.exports = { getVersion, sendMessage, sendMessageToContent, onMessage, onRemoved, onUpdated, inject, openTab, openPopup, navigateTo, getViews, setPopup, contextMenu }

@@ -3,16 +3,20 @@ const { sendMessage, onMessage } = require('./browser')
 
 let playing = false
 let tracking = false
+let title = ''
 let url = document.URL
 let strategy = findStrategy(url)
 if (strategy) {
   const player = require('media-strategies/strategies/' + strategy)
   sendMessage({ action: 'option', option: player.playerName }, (enabled) => {
     if (enabled === 'true') {
-      let title = player.getTitle().replace(/^\s+|\s+$/g, '')
-      sendMessage({ action: 'option', option: title }, (blocked) => {
-        if (blocked != 'true')
-          setTimeout(track, 2000)
+      title = player.getTitle().replace(/^\s+|\s+$/g, '')
+      sendMessage({ action: 'option', option: 'ignored' }, (ignored) => {
+        if (ignored) {
+          if (!ignored.includes(title))
+            setTimeout(track, 2000)
+        }
+        else setTimeout(track, 2000)
       })
     }
   })
@@ -33,7 +37,7 @@ if (strategy) {
   const track = () => {
     sendMessage({
       action: 'connect',
-      title: player.getTitle(),
+      title,
       episode: player.getEpisode(),
     }, (response) => {
       tracking = response

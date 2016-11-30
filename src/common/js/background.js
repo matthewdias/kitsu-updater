@@ -1,5 +1,12 @@
 const {
-  getVersion, sendMessageToContent, onMessage, onRemoved, onUpdated, inject, openTab
+  getVersion,
+  sendMessageToContent,
+  onMessage,
+  onRemoved,
+  onUpdated,
+  inject,
+  openTab,
+  contextMenu
 } = require('./browser')
 const Manager = require('./manager')
 const manager = new Manager()
@@ -11,6 +18,24 @@ let oldVersion = localStorage.getItem('version')
 let newVersion = getVersion()
 if (oldVersion != newVersion)
   openTab('html/options.html')
+
+contextMenu({
+  title: 'Search Anime',
+  contexts: [ 'selection' ],
+  onclick: (info) => {
+    let { selectionText } = info
+    openTab('http://staging.kitsu.io/anime?text=' + selectionText)
+  }
+})
+
+contextMenu({
+  title: 'Search Manga',
+  contexts: [ 'selection' ],
+  onclick: (info) => {
+    let { selectionText } = info
+    openTab('http://staging.kitsu.io/manga?text=' + selectionText)
+  }
+})
 
 onRemoved((tabId) => {
   manager.removePlayer(tabId)
