@@ -6,6 +6,7 @@ const {
   onUpdated,
   inject,
   openTab,
+  setIcon,
   contextMenu
 } = require('./browser')
 const Manager = require('./manager')
@@ -18,6 +19,8 @@ let oldVersion = localStorage.getItem('version')
 let newVersion = getVersion()
 if (oldVersion != newVersion)
   openTab('html/options.html')
+
+setIcon()
 
 contextMenu({
   title: 'Search Anime',

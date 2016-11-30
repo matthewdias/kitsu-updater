@@ -95,10 +95,32 @@ const setPopup = (options) => {
   }
 }
 
+const setIcon = () => {
+  let grayscale = localStorage.getItem('grayscale')
+  if (grayscale == 'true') {
+    chrome.browserAction.setIcon({
+      path: {
+        16: '../img/icongray16.png',
+        32: '../img/icongray32.png',
+        128: '../img/icongray128.png'
+      }
+    })
+  }
+  else {
+    chrome.browserAction.setIcon({
+      path: {
+        16: '../img/icon16.png',
+        32: '../img/icon32.png',
+        128: '../img/icon128.png'
+      }
+    })
+  }
+}
+
 const contextMenu = (options) => {
   if (chrome) {
     chrome.contextMenus.create(options)
   }
 }
 
-module.exports = { getVersion, sendMessage, sendMessageToContent, onMessage, onRemoved, onUpdated, inject, openTab, openPopup, navigateTo, getViews, setPopup, contextMenu }
+module.exports = { getVersion, sendMessage, sendMessageToContent, onMessage, onRemoved, onUpdated, inject, openTab, openPopup, navigateTo, getViews, setPopup, setIcon, contextMenu }

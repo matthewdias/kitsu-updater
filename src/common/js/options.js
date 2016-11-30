@@ -1,4 +1,4 @@
-const { getVersion, sendMessage } = require('./browser')
+const { getVersion, sendMessage, setIcon } = require('./browser')
 
 const loginDiv = document.getElementById('login')
 const userField = document.getElementById('username')
@@ -8,6 +8,7 @@ const userDiv = document.getElementById('user')
 const avatar = document.getElementById('avatar')
 const name = document.getElementById('name')
 const logoutButton = document.getElementById('logout')
+const grayscale = document.getElementById('grayscale')
 const sitesDiv = document.getElementById('sites')
 const save = document.getElementById('save')
 const ignoredTitle = document.getElementById('ignored-title')
@@ -99,6 +100,11 @@ loginButton.onclick = (event) => {
   }, loadUser())
 }
 
+grayscale.onchange = (event) => {
+  localStorage.setItem('grayscale', grayscale.checked)
+  setIcon()
+}
+
 save.onclick = (event) => {
   sites.map((site) => {
     let id = site.toLowerCase().replace(' ', '-')
@@ -127,6 +133,10 @@ if (oldVersion != newVersion) {
     init()
   localStorage.setItem('version', newVersion)
 }
+
+let gray = localStorage.getItem('grayscale')
+if (gray == 'true')
+  grayscale.checked = true
 
 loadUser()
 loadSites()
