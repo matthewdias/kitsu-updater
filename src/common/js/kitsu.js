@@ -1,14 +1,16 @@
-const JsonApi = require('devour-client')
 const OAuth2 = require('client-oauth2')
+const JsonApi = require('devour-client')
+const baseUrl = 'http://staging.kitsu.io/api'
 
 class Kitsu {
   constructor() {
-    this.jsonApi = new JsonApi({ apiUrl: 'http://staging.kitsu.io/api/edge' })
     this.auth = new OAuth2({
       clientId: '202a06b488f1d7f9b92b7f61ab5720d64e6d5e1989427308e5f62472a01227c5',
       clientSecret: '2b6dac58f737484d2d314826c83f357b9a0aa2c33d5e6b6322feb9b2b8fb234f',
-      accessTokenUri: 'http://staging.kitsu.io/api/oauth/token'
+      accessTokenUri: baseUrl + '/oauth/token'
     })
+
+    this.jsonApi = new JsonApi({ apiUrl: baseUrl + '/edge' })
 
     this.jsonApi.define('user', {
       name: '',
@@ -120,14 +122,6 @@ class Kitsu {
       })
     })
   }
-
-  // getEpisode(anime, number) {
-  //   return new Promise((pass, fail) => {
-  //     this.jsonApi.findAll('episode', { filter: { number } }).then((episodes) => {
-  //       pass(episodes[0])
-  //     })
-  //   })
-  // }
 
   getEpisodes(anime) {
     return new Promise((pass, fail) => {
