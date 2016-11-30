@@ -17,8 +17,10 @@ if (chrome) {
 
 let oldVersion = localStorage.getItem('version')
 let newVersion = getVersion()
-if (oldVersion != newVersion)
-  openTab('html/options.html')
+if (oldVersion != newVersion) {
+  if (oldVersion == null)
+    openTab('html/options.html')
+}
 
 setIcon()
 

@@ -14,6 +14,7 @@ const save = document.getElementById('save')
 const ignoredTitle = document.getElementById('ignored-title')
 const ignored = document.getElementById('ignored')
 const ignoreSave = document.getElementById('ignore-save')
+const version = document.getElementById('version')
 
 const sites = [
   'Anime Haven',
@@ -128,6 +129,7 @@ ignoreSave.onclick = (event) => {
 
 let oldVersion = localStorage.getItem('version')
 let newVersion = getVersion()
+version.innerHTML = 'v' + newVersion
 if (oldVersion != newVersion) {
   if (oldVersion == null)
     init()
