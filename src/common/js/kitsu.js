@@ -1,6 +1,6 @@
 const OAuth2 = require('client-oauth2')
 const JsonApi = require('devour-client')
-const baseUrl = 'http://staging.kitsu.io/api'
+const baseUrl = 'https://staging.kitsu.io/api'
 
 class Kitsu {
   constructor() {
