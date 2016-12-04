@@ -1,3 +1,5 @@
+<a href="https://chrome.google.com/webstore/detail/kitsu-updater/maaganaggnnofcmkongapkhkjlehedfj"><img src="https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png"/></a>
+
 ### Supported Sites
 
 - Anime Haven
