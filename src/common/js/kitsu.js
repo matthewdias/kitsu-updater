@@ -5,8 +5,8 @@ const baseUrl = 'https://staging.kitsu.io/api'
 class Kitsu {
   constructor() {
     this.auth = new OAuth2({
-      clientId: '202a06b488f1d7f9b92b7f61ab5720d64e6d5e1989427308e5f62472a01227c5',
-      clientSecret: '2b6dac58f737484d2d314826c83f357b9a0aa2c33d5e6b6322feb9b2b8fb234f',
+      clientId: 'dd031b32d2f56c990b1425efe6c42ad847e7fe3ab46bf1299f05ecd856bdb7dd',
+      clientSecret: '54d7307928f63414defd96399fc31ba847961ceaecef3a5fd93144e960c0e151',
       accessTokenUri: baseUrl + '/oauth/token'
     })
 
