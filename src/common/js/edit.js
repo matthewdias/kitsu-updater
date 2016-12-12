@@ -27,12 +27,12 @@ const saveButton = document.getElementById('save')
 
 sendMessage({ action: 'sendpause', anime: animeId })
 sendMessage({ action: 'anime', id: animeId }, (anime) => {
-  animeLink.href = `http://staging.kitsu.io/anime/${anime.slug}`
+  animeLink.href = `https://kitsu.io/anime/${anime.slug}`
   poster.src = anime.posterImage.original
   animeSave.disabled = true
   let ignored = localStorage.getItem('ignored')
   ignore.checked = ignored && ignored.includes(title)
-  episodeLink.href = `https://staging.kitsu.io/anime/${anime.slug}`
+  episodeLink.href = `https://kitsu.io/anime/${anime.slug}`
   episodeSave.disabled = true
   reconsuming.disabled = true
   reconsumes.value = 0

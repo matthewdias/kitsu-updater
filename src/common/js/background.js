@@ -29,7 +29,7 @@ contextMenu({
   contexts: [ 'selection' ],
   onclick: (info) => {
     let { selectionText } = info
-    openTab('https://staging.kitsu.io/anime?text=' + selectionText)
+    openTab('https://kitsu.io/anime?text=' + selectionText)
   }
 })
 
@@ -38,7 +38,7 @@ contextMenu({
   contexts: [ 'selection' ],
   onclick: (info) => {
     let { selectionText } = info
-    openTab('https://staging.kitsu.io/manga?text=' + selectionText)
+    openTab('https://kitsu.io/manga?text=' + selectionText)
   }
 })
 
