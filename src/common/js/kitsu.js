@@ -12,6 +12,8 @@ class Kitsu {
 
     this.jsonApi = new JsonApi({ apiUrl: baseUrl + '/edge' })
 
+    this.jsonApi.headers['User-Agent'] = 'Updater/0.1.4'
+
     this.jsonApi.define('user', {
       name: '',
       avatar: { original: '' }
