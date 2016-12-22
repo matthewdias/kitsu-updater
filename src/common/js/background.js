@@ -121,6 +121,10 @@ onMessage((request, sender, sendResponse) => {
     manager.kitsu.login(request.username, request.password)
     return
   }
+  if (request.action == 'logout') {
+    manager.kitsu.logout()
+    return
+  }
   if (request.action == 'user') {
     manager.kitsu.getUser().then((user) => {
       sendResponse(user)

@@ -83,12 +83,11 @@ class Kitsu {
     })
   }
 
-  logout(callback) {
+  logout() {
     localStorage.removeItem('id')
     localStorage.removeItem('username')
     localStorage.removeItem('token')
     localStorage.removeItem('refresh')
-    callback()
   }
 
   refresh(token, refresh) {
