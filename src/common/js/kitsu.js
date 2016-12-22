@@ -132,19 +132,11 @@ class Kitsu {
   }
 
   createEntry(entry) {
-    return new Promise((pass, fail) => {
-      this.jsonApi.create('libraryEntry', entry).then((entry) => {
-        pass(entry)
-      })
-    })
+    return this.jsonApi.create('libraryEntry', entry)
   }
 
   getEntry(id) {
-    return new Promise((pass, fail) => {
-      this.jsonApi.find('libraryEntry', id).then((entry) => {
-        pass(entry)
-      })
-    })
+    return this.jsonApi.find('libraryEntry', id)
   }
 
   getEntryForAnime(id) {
@@ -164,19 +156,11 @@ class Kitsu {
   }
 
   updateEntry(entry) {
-    return new Promise((pass, fail) => {
-      this.jsonApi.update('libraryEntry', entry).then((entry) => {
-        pass(entry)
-      })
-    })
+    return this.jsonApi.update('libraryEntry', entry)
   }
 
   removeEntry(id) {
-    return new Promise((pass, fail) => {
-      this.jsonApi.destroy('libraryEntry', id).then((entry) => {
-        pass(entry)
-      })
-    })
+    return this.jsonApi.destroy('libraryEntry', id)
   }
 }
 

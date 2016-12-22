@@ -16,7 +16,7 @@
     "client-oauth2": "3.2.0",
     "copy-webpack-plugin": "4.0.1",
     "devour-client": "1.4.0",
-    "media-strategies": "0.1.35",
+    "media-strategies": "0.1.36",
     "webpack": "1.13.3"
   }
 }

@@ -37,17 +37,19 @@ const init = () => {
 }
 
 const loadUser = () => {
-  sendMessage({ action: 'user' }, (user) => {
-    avatar.src = user.avatar.medium
-    name.innerHTML = user.name
-    logoutButton.onclick = (event) => {
-      sendMessage({ action: 'logout' })
-      userDiv.style = 'display:none;'
-      loginDiv.style = 'display:inline;'
-    }
-    loginDiv.style = 'display:none;'
-    userDiv.style = 'display:inline;'
-  })
+  if (localStorage.getItem('username')) {
+    sendMessage({ action: 'user' }, (user) => {
+      avatar.src = user.avatar.medium
+      name.innerHTML = user.name
+      logoutButton.onclick = (event) => {
+        sendMessage({ action: 'logout' })
+        userDiv.style = 'display:none;'
+        loginDiv.style = 'display:inline;'
+      }
+      loginDiv.style = 'display:none;'
+      userDiv.style = 'display:inline;'
+    })
+  }
 }
 
 const loadSites = () => {
@@ -140,7 +142,6 @@ let gray = localStorage.getItem('grayscale')
 if (gray == 'true')
   grayscale.checked = true
 
-if (localStorage.getItem('username'))
-  loadUser()
+loadUser()
 loadSites()
 loadIgnored()
