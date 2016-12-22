@@ -6,8 +6,15 @@ class Manager {
     this.players = []
     this.kitsu = new Kitsu()
     let token = localStorage.getItem('token')
-    if (token)
-      this.kitsu.authenticate(token)
+    let refresh = localStorage.getItem('refresh')
+    if (token && refresh) {
+      this.kitsu.refresh(token, refresh).then((authToken) => {
+        let { access_token, refresh_token } = authToken.data
+        localStorage.setItem('token', access_token)
+        localStorage.setItem('refresh', refresh_token)
+        this.kitsu.authenticate(token)
+      })
+    }
   }
 
   addPlayer(id, title, episode, callback) {

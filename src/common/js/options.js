@@ -38,7 +38,7 @@ const init = () => {
 
 const loadUser = () => {
   sendMessage({ action: 'user' }, (user) => {
-    avatar.src = user.avatar.original
+    avatar.src = user.avatar.medium
     name.innerHTML = user.name
     logoutButton.onclick = (event) => {
       sendMessage({ action: 'logout' })
