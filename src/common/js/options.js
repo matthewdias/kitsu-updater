@@ -132,6 +132,7 @@ ignoreSave.onclick = (event) => {
 let oldVersion = localStorage.getItem('version')
 let newVersion = getVersion()
 version.innerHTML = 'v' + newVersion
+version.href = `https://github.com/matthewdias/kitsu-updater/releases/tag/${newVersion}`
 if (oldVersion != newVersion) {
   if (oldVersion == null)
     init()
