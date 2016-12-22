@@ -140,6 +140,7 @@ let gray = localStorage.getItem('grayscale')
 if (gray == 'true')
   grayscale.checked = true
 
-loadUser()
+if (localStorage.getItem('username'))
+  loadUser()
 loadSites()
 loadIgnored()

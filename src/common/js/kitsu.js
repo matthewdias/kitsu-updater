@@ -99,9 +99,7 @@ class Kitsu {
   getUser() {
     return new Promise((pass, fail) => {
       this.jsonApi.findAll('user', {
-        filter: {
-          name: localStorage.getItem('username')
-        }
+        filter: { name: localStorage.getItem('username') }
       }).then((users) => {
         pass(users[0])
       })
@@ -109,39 +107,27 @@ class Kitsu {
   }
 
   getAnime(id) {
-    return new Promise((pass, fail) => {
-      this.jsonApi.find('anime', id).then((anime) => {
-        pass(anime)
-      })
-    })
+    return this.jsonApi.find('anime', id)
   }
 
   searchAnime(query) {
-    return new Promise((pass, fail) => {
-      this.jsonApi.findAll('anime', {
-        filter: {
-          text: query
-        }
-      }).then((anime) => {
-        pass(anime)
-      })
+    return this.jsonApi.findAll('anime', {
+      filter: { text: query }
     })
   }
 
   getEpisodes(anime) {
-    return new Promise((pass, fail) => {
-      this.jsonApi.findAll('anime', {
-        filter: { id: anime },
-        include: 'episodes'
-      }).then((anime) => {
-        let { episodes } = anime[0]
-        episodes.sort((a, b) => {
-          if (a.seasonNumber != b.seasonNumber)
-            return a.seasonNumber - b.seasonNumber
-          return a.number - b.number
-        })
-        pass(episodes)
+    return this.jsonApi.findAll('anime', {
+      filter: { id: anime },
+      include: 'episodes'
+    }).then((anime) => {
+      let { episodes } = anime[0]
+      episodes.sort((a, b) => {
+        if (a.seasonNumber != b.seasonNumber)
+          return a.seasonNumber - b.seasonNumber
+        return a.number - b.number
       })
+      return episodes
     })
   }
 
