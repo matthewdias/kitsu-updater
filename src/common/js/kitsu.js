@@ -74,12 +74,13 @@ class Kitsu {
   }
 
   login(username, password) {
-    this.auth.owner.getToken(username, password).then((user) => {
+    return this.auth.owner.getToken(username, password).then((user) => {
       localStorage.setItem('username', username)
       localStorage.setItem('token', user.accessToken)
       localStorage.setItem('refresh', user.refreshToken)
       this.getUser().then((user) => { localStorage.setItem('id', user.id) })
       this.authenticate(user.accessToken)
+      return true
     })
   }
 

@@ -12,7 +12,7 @@ class Manager {
         let { access_token, refresh_token } = authToken.data
         localStorage.setItem('token', access_token)
         localStorage.setItem('refresh', refresh_token)
-        this.kitsu.authenticate(token)
+        this.kitsu.authenticate(access_token)
       })
     }
   }

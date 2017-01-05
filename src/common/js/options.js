@@ -37,7 +37,7 @@ const init = () => {
 }
 
 const loadUser = () => {
-  if (localStorage.getItem('username')) {
+  if (localStorage.getItem('token')) {
     sendMessage({ action: 'user' }, (user) => {
       avatar.src = user.avatar.medium
       name.innerHTML = user.name
@@ -100,7 +100,10 @@ loginButton.onclick = (event) => {
     action: 'login',
     username: userField.value,
     password: passField.value
-  }, loadUser())
+  }, (success) => {
+    if (success)
+      loadUser()
+  })
 }
 
 grayscale.onchange = (event) => {

@@ -116,7 +116,9 @@ onMessage((request, sender, sendResponse) => {
     return
   }
   if (request.action == 'login') {
-    manager.kitsu.login(request.username, request.password)
+    manager.kitsu.login(request.username, request.password).then((success) => {
+      sendResponse(success)
+    })
     return
   }
   if (request.action == 'logout') {
