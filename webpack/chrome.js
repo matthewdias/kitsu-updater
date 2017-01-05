@@ -16,7 +16,15 @@ module.exports = {
         { from: './src/browser/chrome/' },
         { from: './src/common/' }
       ],
-      { ignore: [ '*.js' ] }
+      { ignore: [ '*.js', '*.jsx' ] }
     )
-  ]
+  ],
+  module: {
+    loaders: [{
+      test: /\.jsx/,
+      exclude: /node_modules/,
+      loader: 'babel',
+      query: { presets: [ 'react' ] }
+    }]
+  }
 }
