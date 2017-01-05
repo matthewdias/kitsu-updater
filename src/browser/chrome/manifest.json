@@ -4,7 +4,6 @@
   "description": "Automatically update your Kitsu.io library from streaming sites",
   "version": "0.1.4",
   "permissions": [
-    "background",
     "contextMenus",
     "notifications",
     "tabs",
