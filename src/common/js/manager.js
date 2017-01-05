@@ -29,7 +29,7 @@ class Manager {
             this.players[id].tracking = true
             if (callback)
               callback()
-            body = `Progress: ${entry.progress}/${anime.episodeCount} | Click to modify`
+            body = `Progress: ${entry.progress}/${anime.episodeCount ? anime.episodeCount : '-'} | Click to modify`
           }
           else {
             let status = null
@@ -132,7 +132,7 @@ class Manager {
             if (anime.showType != 'movie' || anime.episodeCount > 1)
               ntitle += ` Episode ${episode}`
             let n = new Notification(ntitle, {
-              body: `Submitting: ${episode}/${anime.episodeCount} | Click to modify`,
+              body: `Submitting: ${episode}/${anime.episodeCount ? anime.episodeCount : '-'} | Click to modify`,
               icon: anime.posterImage.original
             })
             n.onclick = (event) => {
