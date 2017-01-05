@@ -11,9 +11,6 @@ const {
 } = require('./browser')
 const Manager = require('./manager')
 const manager = new Manager()
-if (chrome) {
-  const manifest = chrome.runtime.getManifest()
-}
 
 let oldVersion = localStorage.getItem('version')
 let newVersion = getVersion()
@@ -48,6 +45,7 @@ onRemoved((tabId) => {
 
 onUpdated((tabId, changeInfo, tab) => {
   if (chrome && manager.players[tabId] && changeInfo.url) {
+    let manifest = chrome.runtime.getManifest()
     let strategies = manifest.content_scripts[0].matches
     let inj = false
     strategies.map((strategy) => {
