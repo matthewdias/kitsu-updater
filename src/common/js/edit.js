@@ -150,7 +150,7 @@ sendMessage({ action: 'anime', id: animeId }, (anime) => {
           sendMessage({ action: 'remove', id: entry.id, anime: animeId })
       }
       else {
-        data.media = { id: parseInt(anime.id) }
+        data.anime = { id: parseInt(anime.id) }
         data.user = { id: parseInt(localStorage.getItem('id')) }
         sendMessage({ action: 'create', entry: data }, (entry) => {
           if (entry.status == 'current')

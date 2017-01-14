@@ -44,11 +44,7 @@ class Kitsu {
       synopsis: '',
       airdate: '',
       length: '',
-      thumbnail: { original: ''},
-      media: {
-        jsonApi: 'hasOne',
-        type: 'anime'
-      }
+      thumbnail: { original: ''}
     })
 
     this.jsonApi.define('libraryEntry', {
@@ -58,7 +54,7 @@ class Kitsu {
       reconsumeCount: '',
       private: '',
       rating: '',
-      media: {
+      anime: {
         jsonApi: 'hasOne',
         type: 'anime'
       },
@@ -144,7 +140,7 @@ class Kitsu {
       this.jsonApi.findAll('libraryEntry', {
         filter: {
           userId: localStorage.getItem('id'),
-          mediaId: id
+          animeId: id
         }
       }).then((entries) => {
         if (entries[0])
