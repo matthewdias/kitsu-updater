@@ -45,7 +45,7 @@ sendMessage({ action: 'anime', id: animeId }, (anime) => {
     results.map((anime) => {
       animeSelect.innerHTML += `<option value="${anime.id}"${
         (anime.id == animeId) ? ' selected' : ''
-      }>${anime.canonicalTitle} [${anime.showType}]</option>`
+      }>${anime.canonicalTitle} [${anime.subtype}]</option>`
     })
   })
   sendMessage({ action: 'episodes', anime: animeId }, (episodes) => {

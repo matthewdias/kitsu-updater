@@ -60,7 +60,7 @@ class Manager {
       this.kitsu.getAnime(anime).then((anime) => {
         let { title, episode } = this.players[id]
         let animeTitle = anime.canonicalTitle
-        if (anime.showType != 'movie' || anime.episodeCount > 1)
+        if (anime.subtype != 'movie' || anime.episodeCount > 1)
           animeTitle += ` Episode ${episode}`
         let popup = `html/edit.html?anime=${anime.id}&title=${title}&episode=${episode}`
         setPopup({
@@ -129,7 +129,7 @@ class Manager {
           }
           this.kitsu.updateEntry(data).then((entry) => {
             let ntitle = anime.canonicalTitle
-            if (anime.showType != 'movie' || anime.episodeCount > 1)
+            if (anime.subtype != 'movie' || anime.episodeCount > 1)
               ntitle += ` Episode ${episode}`
             let n = new Notification(ntitle, {
               body: `Submitting: ${episode}/${anime.episodeCount ? anime.episodeCount : '-'} | Click to modify`,

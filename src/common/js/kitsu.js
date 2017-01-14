@@ -27,7 +27,7 @@ class Kitsu {
       slug: '',
       posterImage: { original: '' },
       episodeCount: '',
-      showType: '',
+      subtype: '',
       episodes: {
         jsonApi: 'hasMany',
         type: 'episodes'
