@@ -2,17 +2,21 @@
 
 ### Supported Sites
 
-- Anime Haven
+- Anime Haven*
 - Anime Twist
-- Crunchyroll
-- Daisuki
-- Funimation
-- Hulu
+- Crunchyroll*
+- Daisuki*
+- Funimation*
+- Hulu*
 - KissAnime
-- Masterani
+- Masterani*
 - MoeTube
-- Netflix
-- VIZ
+- Netflix**
+- VIZ*
+
+\* These sites do not support automatic updating, and must be manually updated via the popup
+
+** Netflix support is only for the new interface, which has not rolled out to all users yet
 
 ### Development
 
