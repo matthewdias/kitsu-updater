@@ -39,7 +39,8 @@ const init = () => {
 const loadUser = () => {
   if (localStorage.getItem('token')) {
     sendMessage({ action: 'user' }, (user) => {
-      avatar.src = user.avatar.medium
+      if (user.avatar)
+        avatar.src = user.avatar.medium
       name.innerHTML = user.name
       logoutButton.onclick = (event) => {
         sendMessage({ action: 'logout' })
