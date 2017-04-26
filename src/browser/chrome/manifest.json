@@ -2,11 +2,12 @@
   "manifest_version": 2,
   "name": "Kitsu Updater",
   "description": "Automatically update your Kitsu.io library from streaming sites",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "permissions": [
     "contextMenus",
     "notifications",
     "tabs",
+    "http://9anime.to/*",
     "http://animehaven.to/*",
     "https://twist.moe/*",
     "http://www.crunchyroll.com/*",
@@ -24,6 +25,7 @@
   "content_scripts": [
     {
       "matches": [
+        "http://9anime.to/*",
         "http://animehaven.to/*",
         "https://twist.moe/*",
         "http://www.crunchyroll.com/*",
