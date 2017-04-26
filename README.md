@@ -2,6 +2,7 @@
 
 ### Supported Sites
 
+- 9anime*
 - Anime Haven*
 - Anime Twist
 - Crunchyroll*
@@ -42,4 +43,3 @@ src
     |-- img
     `-- js
 ```
-
