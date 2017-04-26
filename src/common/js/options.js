@@ -17,6 +17,7 @@ const ignoreSave = document.getElementById('ignore-save')
 const version = document.getElementById('version')
 
 const sites = [
+  '9anime',
   'Anime Haven',
   'Anime Twist',
   'Crunchyroll',
@@ -30,9 +31,10 @@ const sites = [
   'VIZ'
 ]
 
-const init = () => {
+const initSites = () => {
   sites.map((site) => {
-    localStorage.setItem(site, true)
+    if (!localStorage.getItem(site))
+      localStorage.setItem(site, true)
   })
 }
 
@@ -138,8 +140,7 @@ let newVersion = getVersion()
 version.innerHTML = 'v' + newVersion
 version.href = `https://github.com/matthewdias/kitsu-updater/releases/tag/${newVersion}`
 if (oldVersion != newVersion) {
-  if (oldVersion == null)
-    init()
+  initSites()
   localStorage.setItem('version', newVersion)
 }
 
