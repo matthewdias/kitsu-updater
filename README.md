@@ -2,17 +2,20 @@
 
 ### Supported Sites
 
-- 9anime*
+- 9anime
+- Animakai
 - Anime Haven*
 - Anime Twist
 - Crunchyroll*
 - Daisuki*
 - Funimation*
+- GogoAnime
 - Hulu*
 - KissAnime
 - Masterani*
 - MoeTube
 - Netflix**
+- SuperAnime
 - VIZ*
 
 \* These sites do not support automatic updating, and must be manually updated via the popup
