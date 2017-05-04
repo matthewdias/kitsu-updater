@@ -9,18 +9,16 @@
 - Crunchyroll*
 - Daisuki*
 - Funimation*
-- GogoAnime*
+- GogoAnime
 - Hulu*
 - KissAnime
 - Masterani*
 - MoeTube
-- Netflix**
+- Netflix
 - SuperAnime
 - VIZ*
 
 \* These sites do not support automatic updating, and must be manually updated via the popup
-
-** Netflix support is only for the new interface, which has not rolled out to all users yet
 
 ### Development
 
