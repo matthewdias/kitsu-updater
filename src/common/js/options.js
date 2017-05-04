@@ -18,16 +18,19 @@ const version = document.getElementById('version')
 
 const sites = [
   '9anime',
+  'Animakai',
   'Anime Haven',
   'Anime Twist',
   'Crunchyroll',
   'Daisuki',
   'Funimation',
+  'GogoAnime',
   'Hulu',
   'KissAnime',
   'Masterani',
   'MoeTube',
   'Netflix',
+  'SuperAnimes',
   'VIZ'
 ]
 
