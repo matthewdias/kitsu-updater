@@ -3,7 +3,7 @@
 ### Supported Sites
 
 - 9anime
-- Animakai
+- AnimaKAI
 - Anime Haven*
 - Anime Twist
 - Crunchyroll*

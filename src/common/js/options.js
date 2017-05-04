@@ -18,7 +18,7 @@ const version = document.getElementById('version')
 
 const sites = [
   '9anime',
-  'Animakai',
+  'AnimaKAI',
   'Anime Haven',
   'Anime Twist',
   'Crunchyroll',
