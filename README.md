@@ -9,7 +9,7 @@
 - Crunchyroll*
 - Daisuki*
 - Funimation*
-- GogoAnime
+- GogoAnime*
 - Hulu*
 - KissAnime
 - Masterani*
