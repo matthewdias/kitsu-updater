@@ -21,7 +21,8 @@
     "*://moetube.net/*",
     "*://www.netflix.com/*",
     "*://www.superanimes.com/*",
-    "*://www.viz.com/*"
+    "*://www.viz.com/*",
+    "*://www.vrv.co/*"
   ],
   "background": { "scripts": [ "js/background.js" ] },
   "options_page": "html/options.html",
@@ -42,7 +43,8 @@
         "*://moetube.net/*",
         "*://www.netflix.com/*",
         "*://www.superanimes.com/*",
-        "*://www.viz.com/*"
+        "*://www.viz.com/*",
+        "*://www.vrv.co/*"
       ],
       "js": [ "js/content.js" ]
     }

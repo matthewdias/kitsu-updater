@@ -31,7 +31,8 @@ const sites = [
   'MoeTube',
   'Netflix',
   'SuperAnimes',
-  'VIZ'
+  'VIZ',
+  'VRV'
 ]
 
 const initSites = () => {
