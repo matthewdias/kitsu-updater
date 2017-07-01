@@ -1,7 +1,7 @@
 {
   "name": "kitsu-updater",
   "description": "Automatically update your Kitsu.io library from streaming sites",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "scripts": {
     "clean": "rm -rf build dist",
     "clean:chrome": "rm -rf build/chrome dist/chrome",
@@ -19,7 +19,7 @@
     "client-oauth2": "3.2.0",
     "copy-webpack-plugin": "4.0.1",
     "devour-client": "1.4.0",
-    "media-strategies": "0.1.44",
+    "media-strategies": "0.1.45",
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "webpack": "1.13.3"
