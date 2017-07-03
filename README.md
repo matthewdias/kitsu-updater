@@ -17,7 +17,7 @@
 - Netflix
 - SuperAnime
 - VIZ*
-- VRV
+- VRV*
 
 \* These sites do not support automatic updating, and must be manually updated via the popup
 
